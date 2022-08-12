@@ -12,6 +12,9 @@ set.smartindent = true
 set.softtabstop = 2
 set.tabstop = 2
 
+set.foldmethod = 'indent'
+set.foldenable = false
+
 set.ignorecase = true
 set.smartcase = true
 
