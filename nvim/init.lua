@@ -50,9 +50,7 @@ require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function()
       require('lualine').setup({
-        options = {
-          theme = 'tokyonight',
-        }
+        options = { theme = 'tokyonight' },
       })
     end,
   }
@@ -98,4 +96,35 @@ require('packer').startup(function(use)
     end
   }
 
-end)  
+  use {
+    'williamboman/mason.nvim',
+    config = function() require('mason').setup() end,
+  }
+
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require('mason-lspconfig').setup({
+        automatic_installation = true,
+        ensure_installed = { 'sumneko_lua', 'pyright' },
+      })
+    end,
+  }
+
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('lspconfig').sumneko_lua.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'hs', 'vim' }
+            }
+          }
+        }
+      })
+      require('lspconfig').pyright.setup({})
+    end,
+  }
+
+end)

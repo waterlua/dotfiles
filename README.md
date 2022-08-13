@@ -31,7 +31,7 @@ ln -s ~/Code/dotfiles/wezterm ~/.config/wezterm
 
 ## Neovim
 ```zsh
-brew install neovim
+brew install neovim npm
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.cache/nvim
