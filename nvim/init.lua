@@ -67,4 +67,18 @@ require('packer').startup(function(use)
     config = function() require('gitsigns').setup({}) end,
   }
 
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup({}) end,
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = {'lua', 'python'},
+      })
+    end
+  }
+
 end)  
