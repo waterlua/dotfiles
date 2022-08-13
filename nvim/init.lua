@@ -41,6 +41,23 @@ require('packer').startup(function(use)
   }
 
   use {
+    'kyazdani42/nvim-web-devicons',
+    config = function() require('nvim-web-devicons').setup({}) end,
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup({
+        options = {
+          theme = 'tokyonight',
+        }
+      })
+    end,
+  }
+
+  use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
