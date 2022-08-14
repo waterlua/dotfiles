@@ -10,11 +10,17 @@ return {
   color_scheme = "tokyonight",
 
   -- Tabs
-  use_fancy_tab_bar = false,
-  tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
+  tab_bar_at_bottom = true,
+  use_fancy_tab_bar = false,
 
   -- Windows
+  window_background_opacity = 0.95,
   window_decorations = "RESIZE",
-  window_background_opacity = 0.90,
+  window_padding = {
+    left = 10,
+    right = 10,
+    top = 20,
+    bottom = 0,
+  },
 }
