@@ -67,6 +67,15 @@ require('packer').startup(function(use)
   }
 
   use {
+    'ggandor/leap.nvim',
+    config = function()
+      local leap = require('leap')
+      leap.setup({})
+      leap.set_default_keymaps()
+    end
+  }
+
+  use {
     'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
